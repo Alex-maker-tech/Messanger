@@ -1,0 +1,17 @@
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\bin\Debug\net6.0\MyMessanger.exe
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\bin\Debug\net6.0\MyMessanger.deps.json
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\bin\Debug\net6.0\MyMessanger.runtimeconfig.json
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\bin\Debug\net6.0\MyMessanger.dll
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\bin\Debug\net6.0\MyMessanger.pdb
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.csproj.AssemblyReference.cache
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.GeneratedMSBuildEditorConfig.editorconfig
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.AssemblyInfoInputs.cache
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.AssemblyInfo.cs
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.csproj.CoreCompileInputs.cache
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.dll
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\refint\MyMessanger.dll
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.pdb
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.genruntimeconfig.cache
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\ref\MyMessanger.dll
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Проект ''Мессенджер''\MyMessanger\MyMessanger\obj\Debug\net6.0\MyMessanger.csproj.CopyComplete

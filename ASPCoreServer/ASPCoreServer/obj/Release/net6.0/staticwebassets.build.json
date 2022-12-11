@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7+rwJhQMdlYAgNtPgyvoBCLt2zGe0QtfxNZ+HBMqxxQ=",
+  "Source": "ASPCoreServer",
+  "BasePath": "_content/ASPCoreServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

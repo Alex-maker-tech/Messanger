@@ -1,0 +1,14 @@
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\ASPCoreServer.exe
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\messages.json
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\users.json
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\ASPCoreServer.dll
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\ASPCoreServer.deps.json
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\ASPCoreServer.runtimeconfig.json
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\ASPCoreServer.pdb
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Проект ''Мессенджер''\ASPCoreServer\ASPCoreServer\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

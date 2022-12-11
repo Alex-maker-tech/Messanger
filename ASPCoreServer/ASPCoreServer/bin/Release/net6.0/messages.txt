@@ -1,0 +1,14 @@
+{"UserName":"alex","MessageText":"Hello everybody!","TimeStamp":"2022-08-02T00:27:35.9612842+05:00"}
+{"UserName":"Server","MessageText":"alex left the messanger","TimeStamp":"2022-08-02T00:29:36.7067832+05:00"}
+{"UserName":"Server","MessageText":"alex joined the messanger","TimeStamp":"2022-08-02T00:29:48.5917564+05:00"}
+{"UserName":"alex","MessageText":"How are you today?","TimeStamp":"2022-08-02T00:30:32.3270644+05:00"}
+{"UserName":"Server","MessageText":"alex left the messanger","TimeStamp":"2022-08-02T00:30:42.9503783+05:00"}
+{"UserName":"Server","MessageText":"sam joined the messanger for the first time","TimeStamp":"2022-08-02T00:33:28.4961054+05:00"}
+{"UserName":"sam","MessageText":"Hi, alex! What do you do?","TimeStamp":"2022-08-02T00:34:02.8285548+05:00"}
+{"UserName":"Server","MessageText":"sam left the messanger","TimeStamp":"2022-08-02T00:34:08.8460607+05:00"}
+{"UserName":"Server","MessageText":"alex joined the messanger","TimeStamp":"2022-08-02T00:38:57.9338459+05:00"}
+{"UserName":"alex","MessageText":"I'm chatting with you. And you? What do you do?","TimeStamp":"2022-08-02T00:39:42.0886867+05:00"}
+{"UserName":"Server","MessageText":"alex left the messanger","TimeStamp":"2022-08-02T00:39:59.1371799+05:00"}
+{"UserName":"Server","MessageText":"alex joined the messanger","TimeStamp":"2022-08-02T00:46:14.1849084+05:00"}
+{"UserName":"alex","MessageText":"hey! what do you do?","TimeStamp":"2022-08-02T00:46:33.1371243+05:00"}
+{"UserName":"Server","MessageText":"alex left the messanger","TimeStamp":"2022-08-02T00:46:37.9195255+05:00"}

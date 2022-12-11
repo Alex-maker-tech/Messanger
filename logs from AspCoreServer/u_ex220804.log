@@ -1,0 +1,5 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2022-08-04 13:00:22
+#Fields: date time cs-method cs-uri-stem cs-username c-ip cs-version cs(User-Agent) cs(Referer) sc-status sc-bytes cs-bytes
+2022-08-04 13:00:21 GET / - 92.248.185.15 HTTP/1.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/102.0.5005.148+YaBrowser/22.7.2.899+Yowser/2.5+Safari/537.36 - 200 0 485

@@ -1,0 +1,23 @@
+{"UserName":"alex","MessageText":"hi!","TimeStamp":"2022-08-04T18:46:10.9992521+05:00"}
+{"UserName":"alex","MessageText":"hello!","TimeStamp":"2022-08-04T18:46:17.0410161+05:00"}
+{"UserName":"alex","MessageText":"hello everybody!","TimeStamp":"2022-08-04T18:46:41.5099829+05:00"}
+{"UserName":"Server","MessageText":"sam joined the messanger for the first time","TimeStamp":"2022-11-21T09:03:31.9446369-08:00"}
+{"UserName":"sam","MessageText":"Hi everybody!","TimeStamp":"2022-11-21T09:03:55.1555751-08:00"}
+{"UserName":"sam","MessageText":"hello!","TimeStamp":"2022-11-21T09:04:09.8227193-08:00"}
+{"UserName":"sam","MessageText":"I'm trying to send messages","TimeStamp":"2022-11-21T09:04:44.202581-08:00"}
+{"UserName":"Server","MessageText":"sam left the messanger","TimeStamp":"2022-11-21T09:05:37.9354279-08:00"}
+{"UserName":"Server","MessageText":"sam joined the messanger","TimeStamp":"2022-11-21T09:06:31.279291-08:00"}
+{"UserName":"Server","MessageText":"alexandr joined the messanger for the first time","TimeStamp":"2022-11-21T09:08:06.5130189-08:00"}
+{"UserName":"sam","MessageText":"hello, alexandr!\r\n","TimeStamp":"2022-11-21T09:08:31.435153-08:00"}
+{"UserName":"alexandr","MessageText":"hello!","TimeStamp":"2022-11-21T09:08:38.9934974-08:00"}
+{"UserName":"Server","MessageText":"alexandr left the messanger","TimeStamp":"2022-11-21T09:11:31.6356153-08:00"}
+{"UserName":"Server","MessageText":"sam left the messanger","TimeStamp":"2022-11-21T09:11:35.62013-08:00"}
+{"UserName":"Server","MessageText":"sam joined the messanger","TimeStamp":"2022-11-21T11:08:24.7341619-08:00"}
+{"UserName":"sam","MessageText":"hi!","TimeStamp":"2022-11-22T07:01:23.5825858-08:00"}
+{"UserName":"sam","MessageText":"hello!","TimeStamp":"2022-11-22T07:01:33.3819438-08:00"}
+{"UserName":"Server","MessageText":"sam left the messanger","TimeStamp":"2022-11-22T07:02:49.0862186-08:00"}
+{"UserName":"Server","MessageText":"mtg joined the messanger for the first time","TimeStamp":"2022-11-26T02:05:55.2357227-08:00"}
+{"UserName":"mtg","MessageText":"1","TimeStamp":"2022-11-26T02:06:09.8106719-08:00"}
+{"UserName":"mtg","MessageText":"1","TimeStamp":"2022-11-26T02:06:29.7338142-08:00"}
+{"UserName":"mtg","MessageText":"1","TimeStamp":"2022-11-26T02:07:27.4388354-08:00"}
+{"UserName":"mtg","MessageText":"1","TimeStamp":"2022-11-26T02:07:40.7563486-08:00"}
