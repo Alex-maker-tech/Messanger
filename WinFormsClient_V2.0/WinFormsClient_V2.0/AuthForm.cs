@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using MessangerAPI;
+﻿using MessangerAPI;
 
 using WinFormsClient_V2._0;
 
@@ -28,7 +18,7 @@ namespace WinFormsClient
 		private async void OkBtn_Click(object sender, EventArgs e)
 		{
 			//! Проверка имени пользователя и пароля
-			if ((UsernameTB.Text.Length >= 1) && (PasswordTB.Text.Length >= 1))
+			if ((UsernameTB.Text.Length > 0) && (PasswordTB.Text.Length > 0))
 			{
 				userData = new UserData()
 				{
@@ -43,11 +33,12 @@ namespace WinFormsClient
 				return;
 			}
 
-			bool result = Convert.ToInt32(await Form1.API.LoginAsync(userData)) > 0;
-			if (result)
+			int result = await Form1.API.LoginAsync(userData);
+			if (result != -1)
 			{
-				Form1.UserName = UsernameTB.Text;
-				Form1.Password = PasswordTB.Text;
+				Form1.Id = result;
+				Form1.UserName = userData.UserName;
+				Form1.Password = userData.Password;
 				this.Hide();
 			}
 			else MessageBox.Show("The username or password is incorrect", "Error", 
@@ -56,7 +47,7 @@ namespace WinFormsClient
 
 		private async void RegisterBtn_Click(object sender, EventArgs e)
 		{
-			if ((UsernameTB.Text.Length >= 1) && (PasswordTB.Text.Length >= 1))
+			if ((UsernameTB.Text.Length > 0) && (PasswordTB.Text.Length > 0))
 			{
 				userData = new UserData()
 				{
@@ -71,11 +62,12 @@ namespace WinFormsClient
 				return;
 			}
 
-			bool result = Convert.ToInt32(await Form1.API.RegisterAsync(userData)) > 0;
-			if (result)
+			int result = await Form1.API.RegisterAsync(userData);
+			if (result != -1)
 			{
-				Form1.UserName = UsernameTB.Text;
-				Form1.Password = PasswordTB.Text;
+				Form1.Id = result;
+				Form1.UserName = userData.UserName;
+				Form1.Password = userData.Password;
 				this.Hide();
 			}
 			else MessageBox.Show("Try again", "Error",

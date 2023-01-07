@@ -4,7 +4,9 @@
 	public class UserData
 	{
 		public string? UserName { get; set; }
+
 		public int? UserId{ get; set; }
+
 		public string? Password { get; set; }
 
 		public bool? IsOnline { get; set; }

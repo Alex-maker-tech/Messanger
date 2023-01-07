@@ -19,11 +19,11 @@
 			TimeStamp = DateTime.Now;
 		}
 
-		public Message(string userName, int userid, int? recipientid, string messageText, DateTime timeStamp)
+		public Message(int userid, string messageText, DateTime timeStamp)
 		{
-			UserName = userName;
+			UserName = null;
 			UserId = userid;
-			RecipientId = recipientid;
+			RecipientId = 0;
 			MessageText = messageText;
 			TimeStamp = timeStamp;
 		}
@@ -36,15 +36,6 @@
 			TimeStamp = timestamp;
 		}
 
-		public Message(int id, int userid, int recipientid, string messageText, DateTime timestamp)
-		{
-			Id = id;
-			UserId = userid;
-			RecipientId = recipientid;
-			MessageText = messageText;
-			TimeStamp = timestamp;
-		}
-
 		public Message(string userName, int userid, int? recipientid, string messageText)
 		{
 			UserName = userName;
@@ -54,14 +45,24 @@
 			TimeStamp = DateTime.Now;
 		}
 
-		public Message(int userid, string messageText, DateTime timeStamp)
+		public Message(int id, int userid, int recipientid, string messageText, DateTime timestamp)
 		{
-			UserName = null;
+			Id = id;
 			UserId = userid;
-			RecipientId = 0;
+			RecipientId = recipientid;
+			MessageText = messageText;
+			TimeStamp = timestamp;
+		}
+
+		public Message(string userName, int userid, int? recipientid, string messageText, DateTime timeStamp)
+		{
+			UserName = userName;
+			UserId = userid;
+			RecipientId = recipientid;
 			MessageText = messageText;
 			TimeStamp = timeStamp;
 		}
+
 
 		public override string? ToString()
 		{

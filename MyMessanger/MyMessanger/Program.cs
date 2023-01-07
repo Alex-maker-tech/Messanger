@@ -6,8 +6,8 @@ namespace MyMessanger
 {
 	internal class Program
 	{
-		public static int MessageId;
-		public static string UserName;
+		//public static int MessageId;
+		//public static string UserName;
 		private static MessangerClientAPI API = new MessangerClientAPI();
 		private static List<int> Ids = new List<int>();
 
@@ -65,7 +65,7 @@ namespace MyMessanger
 		
 		private static void GetNewMessages(int id)
 		{
-			var list = API.GetMessageHTTPAsync(id).Result;
+			var list = API.GetMessagesHTTPAsync(id).Result;
 
 			foreach (var item in list)
 			{
@@ -80,26 +80,42 @@ namespace MyMessanger
 
 		static void Main(string[] args)
 		{
-			int id;
+			/*int id = -1;
 			UserData user;
 			do
 			{
-				user = new UserData
-				{
-					UserName = Console.ReadLine().Trim('\n', '\r'),
-					Password = Console.ReadLine().Trim('\n', '\r')
-				};
+				Console.Clear();
+				user = new UserData();
+				Console.Write("Username: ");
+				string username = Console.ReadLine().Trim('\n', '\r');
+				Console.Write("Password: ");
+				string password = Console.ReadLine().Trim('\n', '\r');
 
-				id = API.RegisterAsync(user).Result;
+				if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+					continue;
+
+				user.UserName = username;
+				user.Password = password;
+
+				id = API.LoginAsync(user).Result;
 			} while (id == -1);
 
-			Console.WriteLine(id);
+			user.UserId = id;
+			Console.WriteLine(user);
 
 			do
 			{
-				GetNewMessages(id);
+				GetNewMessages((int)user.UserId);
 			} while (Console.ReadLine() != "exit") ;
 
+
+			bool result = API.LogoutAsync(user).Result;
+			Console.WriteLine(result);*/
+
+			object? str = new();
+			str = null;
+			_ = int.TryParse(str.ToString(), out int integer);
+			Console.WriteLine(integer);
 		}
 	}
 }

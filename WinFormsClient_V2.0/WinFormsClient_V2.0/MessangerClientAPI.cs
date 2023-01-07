@@ -6,9 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
-using MessangerAPI;
 
-namespace Messanger
+namespace MessangerAPI
 {
 	public class MessangerClientAPI
 	{
@@ -20,7 +19,7 @@ namespace Messanger
 
 
 		//! GET
-		public List<MessangerAPI.Message>? GetMessages(int MessagesId)
+		public List<Message>? GetMessages(int MessagesId)
 		{
 			WebRequest request = WebRequest.Create($"{SiteName}api/Messanger/" + MessagesId.ToString());
 			request.Method = "GET";
@@ -36,47 +35,53 @@ namespace Messanger
 			
 			if ((status.ToLower() == "ok") && (responseFromServer != "Not found"))
 			{
-				List<MessangerAPI.Message> msgs = JsonConvert.DeserializeObject<List<MessangerAPI.Message>>(responseFromServer);
-				return new List<MessangerAPI.Message>();
+				List<Message> msgs = JsonConvert.DeserializeObject<List<Message>>(responseFromServer);
+				return new List<Message>();
 			}
 			return null;
 		}
 
-		public async Task<List<MessangerAPI.Message>>? GetMessagesHTTPAsync(int MessageId)
+		public async Task<List<Message>>? GetMessagesHTTPAsync(int MessageId)
 		{
 			var responseString = await client.GetStringAsync($"{SiteName}api/Messanger/messages/" + MessageId.ToString());
+			
 			if (responseString != null)
 			{
-				List<MessangerAPI.Message> msgs = JsonConvert.DeserializeObject<List<MessangerAPI.Message>>(responseString);
+				List<Message> msgs = JsonConvert.DeserializeObject<List<Message>>(responseString);
 				return msgs;
 			}
+
 			return null;
 		}
 
-		public int GetMsgCount()
+		public async Task<string> GetUsername(int UserId)
 		{
-			WebRequest request = WebRequest.Create($"{SiteName}api/Messanger/get-msg-count");
-			request.Method = "GET";
-			WebResponse response = request.GetResponse();
-			string status = ((HttpWebResponse)response).StatusDescription;
+			var responseString = await client.GetStringAsync($"{SiteName}api/Messanger/users/" + UserId.ToString());
 
-			Stream dataStream = response.GetResponseStream();
-			StreamReader reader = new StreamReader(dataStream);
-			string responseFromServer = reader.ReadToEnd();
-			reader.Close();
-			dataStream.Close();
-			response.Close();
-
-			if (status.ToLower() == "ok")
+			if (responseString != null)
 			{
-				return Convert.ToInt32(responseFromServer);
+				return JsonConvert.DeserializeObject<UserData>(responseString).UserName;
 			}
-			return -1;
+
+			return null;
+		}
+
+		public async Task<List<UserData>> GetUsers()
+		{
+			var responceString = await client.GetStringAsync($"{SiteName}api/Messanger/get-users");
+
+			if (responceString != null)
+			{
+				List<UserData> users = JsonConvert.DeserializeObject<List<UserData>>(responceString);
+				return users;
+			}
+
+			return null;
 		}
 
 
 		//! POST
-		public async Task<bool> SendMessageAsync(MessangerAPI.Message msg)
+		public async Task<bool> SendMessageAsync(Message msg)
 		{
 			string postData = JsonConvert.SerializeObject(msg);
 			var data = new StringContent(postData, Encoding.UTF8, "application/json");
@@ -120,11 +125,17 @@ namespace Messanger
 
 			var response = await client.PostAsync($"{SiteName}api/Messanger/register", data);
 			var result = response.StatusCode;
-			var res = response.Content.ToString();
+			string resp;
+			using (var res = response.Content.ReadAsStream())
+			{
+				StreamReader reader = new StreamReader(res);
+				resp = reader.ReadToEnd();
+				reader.Close();
+			}
 
 			if (result == HttpStatusCode.OK)
 			{
-				return Convert.ToInt32(res);
+				return Convert.ToInt32(resp);
 			}
 			else return -1;
 		}

@@ -4,7 +4,7 @@
 	public class UserData
 	{
 		public string? UserName { get; set; }
-		public int? UserId{ get; set; }
+		public int? UserId { get; set; }
 		public string? Password { get; set; }
 
 		public bool? IsOnline { get; set; }
@@ -49,9 +49,7 @@
 			IsOnline = isonline;
 		}
 
-		public override string? ToString()
-		{
-			return $"\"{UserName}\" #{UserId} : {Password}";
-		}
+		public override string? ToString() => $"\"{UserName}\" #{UserId} : {Password}";
+		
 	}
 }

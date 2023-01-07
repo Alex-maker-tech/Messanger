@@ -22,7 +22,7 @@ namespace ASPCoreServer_V2._0.Controllers
 			using (var db = new SqliteConnection(connectionString))
 			{
 				db.Open();
-				SqliteCommand command = new SqliteCommand($"SELECT Id, UserId, MessageText, TimeStamp FROM Messages Where RecipientId = @id OR RecipientId IS NULL", db);
+				SqliteCommand command = new SqliteCommand($"SELECT Id, UserId, RecipientId, MessageText, TimeStamp FROM Messages Where RecipientId = @id OR UserId = @id", db);
 				SqliteParameter param = new SqliteParameter { ParameterName = "@id", Value = id, SqliteType = SqliteType.Integer };
 				command.Parameters.Add(param);
 				var reader = command.ExecuteReader();
@@ -32,39 +32,70 @@ namespace ASPCoreServer_V2._0.Controllers
 				{
 					while (reader.Read())
 					{
-						Message message = new Message(reader.GetInt32(0), reader.GetInt32(1), id, reader.GetString(2), reader.GetDateTime(3));
+						Message message = new Message(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetString(3), reader.GetDateTime(4));
 						messages.Add(message);
 					}
 				}
 
+				//Console.WriteLine($"api/Messanger/messages/{id}: {messages.Count}");
 				return messages;
 			}
 		}
 
 		// GET api/<Messanger>/users/5
 		[HttpGet("users/{id}")]
-		public string GetUserName(int id)
+		public UserData GetUserName(int id)
 		{
 			using (var db = new SqliteConnection(connectionString))
 			{
 				db.Open();
-				SqliteCommand command = new SqliteCommand($"SELECT UserName, Id FROM Users Where Id = @id", db);
+				SqliteCommand command = new SqliteCommand($"SELECT UserName, IsOnline FROM Users Where Id = @id", db);
 				SqliteParameter param = new SqliteParameter { ParameterName = "@id", Value = id, SqliteType = SqliteType.Integer };
 				command.Parameters.Add(param);
 				var reader = command.ExecuteReader();
 
-				string username = "null";
+				UserData user = null;
 				if (reader.HasRows)
 				{
 					while (reader.Read())
 					{
-						username = reader.GetString(0);
-
+						user = new UserData { UserName = reader.GetString(0), IsOnline = reader.GetBoolean(1) };
 					}
 				}
 
-				return username;
+				//Console.WriteLine($"api/Messanger/users/{id}: {user.UserName}");
+				return user;
 			}
+		}
+
+		// GET api/Messanger/get-users
+		[HttpGet("get-users")]
+		public List<UserData> GetUserData()
+		{
+			var users = new List<UserData>();
+			
+			using (var db = new SqliteConnection(connectionString))
+			{
+				db.Open();
+				SqliteCommand command = new SqliteCommand("SELECT Id, UserName, IsOnline FROM Users", db);
+				var reader = command.ExecuteReader();
+
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						users.Add(new UserData { 
+							UserId	= reader.GetInt32(0), 
+							UserName = reader.GetString(1), 
+							Password = string.Empty, 
+							IsOnline = reader.GetBoolean(2)
+						});
+					}
+				}
+			}
+
+			//Console.WriteLine($"api/Messanger/get-users: {users.Count}");
+			return users;
 		}
 
 		// POST api/<Messanger>
@@ -87,6 +118,7 @@ namespace ASPCoreServer_V2._0.Controllers
 				command.Parameters.AddRange(new SqliteParameter[]{param1, param2, param3});
 				var res = command.ExecuteNonQuery();
 
+				//Console.WriteLine($"api/Messanger: { (res == 1 ? "true" : "false") }");
 				if (res == 1) return new OkResult();
 			}
 
@@ -133,6 +165,7 @@ namespace ASPCoreServer_V2._0.Controllers
 					command.Parameters.Add(param);
 					var res = command.ExecuteNonQuery();
 
+					//Console.WriteLine($"api/Messanger/login: {users[0].UserId}");
 					if (res == 1) return new OkObjectResult(users[0].UserId);
 				}
 			}
@@ -152,7 +185,7 @@ namespace ASPCoreServer_V2._0.Controllers
 			{
 				db.Open();
 
-				SqliteCommand command = new SqliteCommand("SELECT COUNT(*) FROM Users WHERE UserName = @username AND Password = @password", db);
+				SqliteCommand command = new SqliteCommand("SELECT COUNT(Id) FROM Users WHERE UserName = @username AND Password = @password", db);
 				SqliteParameter param = new SqliteParameter { ParameterName = "@username", Value = userData.UserName, SqliteType = SqliteType.Text }, 
 					param2 = new SqliteParameter { ParameterName = "@password", Value = userData.Password, SqliteType = SqliteType.Text };
 				command.Parameters.AddRange(new SqliteParameter[] { param, param2 });
@@ -162,6 +195,7 @@ namespace ASPCoreServer_V2._0.Controllers
 				else
 				{
 					command = new SqliteCommand("INSERT INTO Users(UserName, Password, IsOnline) VALUES (@username, @password, @isonline)", db);
+					command.Parameters.Clear();
 					command.Parameters.AddRange(new SqliteParameter[] { param, param2, new SqliteParameter { ParameterName = "@isonline", Value = true, SqliteType = SqliteType.Integer } });
 					res = command.ExecuteNonQuery();
 
@@ -180,6 +214,7 @@ namespace ASPCoreServer_V2._0.Controllers
 							}
 						}
 
+						//Console.WriteLine($"api/Messanger/register: {id}");
 						if (id != -1) return new OkObjectResult(id);
 						else return BadRequest();
 					}
@@ -225,6 +260,7 @@ namespace ASPCoreServer_V2._0.Controllers
 					command.Parameters.AddRange(new SqliteParameter[] {param1, param2});
 					var res = command.ExecuteNonQuery();
 
+					//Console.WriteLine($"api/Messanger/logout: { (res == 1 ? "true" : "false") }");
 					if (res == 1) return new OkResult();
 				}
 			}

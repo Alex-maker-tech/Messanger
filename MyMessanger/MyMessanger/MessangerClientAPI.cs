@@ -23,6 +23,7 @@ namespace Messanger
 
 		//! GET
 		public List<Message>? GetMessages(int MessagesId)
+		//! УСТАРЕВШИЙ МЕТОД
 		{
 			WebRequest request = WebRequest.Create($"{SiteName}api/Messanger/" + MessagesId.ToString());
 			request.Method = "GET";
@@ -44,7 +45,8 @@ namespace Messanger
 			return null;
 		}
 
-		public async Task<List<Message>> GetMessageHTTPAsync(int MessageId)
+		public async Task<List<Message>> GetMessagesHTTPAsync(int MessageId)
+		//! АКТУАЛЬНЫЙ МЕТОД
 		{
 			var responseString = await client.GetStringAsync($"{SiteName}api/Messanger/messages/" + MessageId.ToString());
 			if (responseString != null)
@@ -54,7 +56,9 @@ namespace Messanger
 			}
 			return null;
 		}
+
 		public int GetMsgCount()
+		//! УСТАРЕВШИЙ МЕТОД
 		{
 			WebRequest request = WebRequest.Create($"{SiteName}api/Messanger/get-msg-count");
 			request.Method = "GET";
